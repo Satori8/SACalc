@@ -10,6 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var calcField: UITextField!
+    
+    @IBAction func digitAction(sender: UIButton) {
+    }
+    
+    @IBAction func operationAction(sender: UIButton) {
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
