@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     var dotPresent = false
     var operationPending = false
+    var calc = SACalc()
 
     @IBOutlet weak var calcField: UITextField!
     
@@ -36,16 +37,7 @@ class ViewController: UIViewController {
     
     @IBAction func operationAction(sender: UIButton) {
         operationPending = true
-        var operation = sender.currentTitle
-//        switch(sender.currentTitle!){
-//            case "+":
-//            case "-":
-//            case "×":
-//            case "÷":
-//            case "%":
-//            case "=":
-//            default:
-//        }
+        calc.operation = sender.currentTitle!
     }
     
     
