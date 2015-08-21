@@ -9,13 +9,43 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var dotPresent = false
+    var operationPending = false
 
     @IBOutlet weak var calcField: UITextField!
     
     @IBAction func digitAction(sender: UIButton) {
+        switch(sender.currentTitle!){
+        case "C":
+            calcField.text = "0"
+            dotPresent = false
+        case "±":
+            calcField.text = (-(calcField.text as NSString).doubleValue).description
+        case ".":
+            if(!dotPresent){
+                calcField.text = calcField.text + "."
+                dotPresent = true
+            }
+        default:
+            if(calcField.text == "0"){
+                calcField.text = ""
+            }
+            calcField.text = calcField.text + sender.currentTitle!
+        }
     }
     
     @IBAction func operationAction(sender: UIButton) {
+        operationPending = true
+        var operation = sender.currentTitle
+//        switch(sender.currentTitle!){
+//            case "+":
+//            case "-":
+//            case "×":
+//            case "÷":
+//            case "%":
+//            case "=":
+//            default:
+//        }
     }
     
     
